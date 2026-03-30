@@ -619,6 +619,129 @@ input:focus, select:focus { border-color: var(--amber); }
 }
 .memo-body-input::placeholder { color: var(--border); }
 
+/* ===== PAGE 6: JOURNAL ===== */
+#page-journal .page-body { padding: 24px 28px; }
+.j-container { max-width: 680px; margin: 0 auto; }
+.j-filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:1.5rem; }
+.j-filter-tag {
+  font-size:12px; padding:5px 14px; border-radius:20px;
+  cursor:pointer; border:1px solid transparent;
+  transition:opacity 0.15s,background 0.15s; user-select:none; font-weight:500;
+}
+.j-filter-tag.all   { background:var(--surface); color:var(--text-muted); border-color:var(--border); }
+.j-filter-tag.emotion { background:#EEEDFE; color:#3C3489; border-color:#AFA9EC; }
+.j-filter-tag.idea    { background:#E1F5EE; color:#085041; border-color:#5DCAA5; }
+.j-filter-tag.off { opacity:0.35; }
+.j-new-entry {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:1.1rem 1.25rem 0.9rem;
+  margin-bottom:1.75rem; box-shadow:var(--shadow);
+}
+.j-entry-top { display:flex; gap:8px; margin-bottom:0.65rem; }
+.j-cat-select {
+  font-size:12px; font-family:'Noto Sans JP',sans-serif; color:var(--text-muted);
+  background:var(--surface2); border:1px solid var(--border); border-radius:8px;
+  padding:4px 10px; outline:none; cursor:pointer;
+}
+.j-textarea {
+  width:100%; font-size:14px; font-family:'Noto Sans JP',sans-serif;
+  color:var(--text); background:transparent; border:none; outline:none;
+  resize:none; height:80px; line-height:1.75;
+}
+.j-textarea::placeholder { color:var(--text-muted); }
+.j-tag-row {
+  display:flex; align-items:center; flex-wrap:wrap; gap:6px;
+  min-height:28px; margin-bottom:0.65rem; padding:4px 0;
+  border-top:1px dashed var(--border);
+}
+.j-tag-input {
+  font-size:11px; font-family:'Noto Sans JP',sans-serif;
+  border:none; outline:none; background:transparent; color:var(--text); width:120px;
+}
+.j-tag-input::placeholder { color:var(--text-muted); }
+.j-mini-tag {
+  display:inline-flex; align-items:center; gap:3px;
+  font-size:11px; padding:2px 9px; border-radius:12px; font-weight:500;
+}
+.j-mini-tag.purple { background:#EEEDFE; color:#3C3489; }
+.j-mini-tag.teal   { background:#E1F5EE; color:#085041; }
+.j-mini-tag.amber  { background:#FAEEDA; color:#854F0B; }
+.j-mini-tag.coral  { background:#FAECE7; color:#993C1D; }
+.j-tag-del { cursor:pointer; font-size:10px; opacity:0.55; }
+.j-tag-del:hover { opacity:1; }
+.j-entry-bottom {
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1px solid var(--border); padding-top:0.75rem;
+}
+.j-mood-row { display:flex; gap:6px; }
+.j-mood-btn {
+  width:30px; height:30px; border-radius:50%; border:1px solid var(--border);
+  background:var(--surface2); font-size:15px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.12s;
+}
+.j-mood-btn.sel { background:#EEEDFE; border-color:#AFA9EC; }
+.j-save-btn {
+  font-size:13px; font-weight:700; font-family:'Noto Sans JP',sans-serif;
+  padding:7px 20px; border-radius:8px; background:var(--text); color:#fff;
+  border:none; cursor:pointer; transition:opacity 0.15s;
+}
+.j-save-btn:hover { opacity:0.85; }
+.j-section-label {
+  font-size:10px; font-weight:500; color:var(--text-muted);
+  letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.75rem;
+}
+.j-entries-list { display:flex; flex-direction:column; gap:10px; margin-bottom:1.75rem; }
+.j-entry-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:0 var(--radius) var(--radius) 0;
+  padding:1rem 1.25rem; animation:fadeUp 0.18s ease;
+}
+.j-entry-card.emotion-type { border-left:3px solid #AFA9EC; }
+.j-entry-card.idea-type    { border-left:3px solid #5DCAA5; }
+.j-entry-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.j-entry-cat { font-size:11px; font-weight:500; }
+.j-entry-cat.em { color:#3C3489; }
+.j-entry-cat.id { color:#085041; }
+.j-entry-time { font-size:11px; color:var(--text-muted); }
+.j-entry-text { font-size:14px; color:var(--text); line-height:1.7; }
+.j-entry-tags { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.j-card-actions { display:flex; gap:8px; margin-top:10px; }
+.j-action-btn {
+  font-size:12px; font-family:'Noto Sans JP',sans-serif;
+  padding:5px 12px; border-radius:6px; border:1px solid var(--border);
+  background:none; cursor:pointer; transition:all 0.12s; color:var(--text-muted);
+}
+.j-action-btn.resolve { color:var(--green); border-color:var(--green-light); }
+.j-action-btn.resolve:hover { background:var(--green-light); }
+.j-action-btn.del:hover { background:var(--red-light); color:var(--red); border-color:var(--red-light); }
+.j-resolved-toggle {
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+  padding:10px 0; border-top:1px solid var(--border); margin-bottom:10px;
+}
+.j-chevron { font-size:10px; color:var(--text-muted); transition:transform 0.2s; }
+.j-chevron.open { transform:rotate(90deg); }
+.j-resolved-list { display:none; flex-direction:column; gap:8px; margin-bottom:1.75rem; }
+.j-resolved-card {
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); padding:0.75rem 1rem;
+}
+.j-resolved-inner { display:flex; align-items:center; gap:12px; }
+.j-resolved-body { flex:1; }
+.j-resolved-label { font-size:10px; color:var(--green); font-weight:700; margin-bottom:4px; }
+.j-resolved-text { font-size:13px; color:var(--text-muted); line-height:1.6; }
+.j-resolved-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+.j-restore-btn {
+  font-size:11px; font-family:'Noto Sans JP',sans-serif;
+  padding:4px 10px; border-radius:6px; border:1px solid var(--border);
+  background:var(--surface); cursor:pointer; white-space:nowrap;
+  color:var(--text-muted); flex-shrink:0;
+}
+.j-restore-btn:hover { border-color:var(--amber); color:var(--amber); }
+.j-resolved-count {
+  font-size:11px; font-family:'JetBrains Mono',monospace;
+  background:var(--surface2); padding:2px 8px; border-radius:20px; color:var(--text-muted);
+}
+
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--border);border-radius:4px; }
@@ -644,6 +767,7 @@ input:focus, select:focus { border-color: var(--amber); }
     <button class="nav-item" onclick="goPage('daily',this)"><span class="icon">🕐</span> Daily</button>
     <button class="nav-item" onclick="goPage('expense',this)"><span class="icon">💴</span> Wallet</button>
     <button class="nav-item" onclick="goPage('memo',this)"><span class="icon">📝</span> Memo</button>
+    <button class="nav-item" onclick="goPage('journal',this)"><span class="icon">📔</span> Journal</button>
   </nav>
   <div class="sidebar-footer" id="sb-footer"></div>
 </aside>
@@ -838,6 +962,59 @@ input:focus, select:focus { border-color: var(--amber); }
       <textarea class="memo-body-input" id="memo-body-input" placeholder="ここにメモを入力...&#10;&#10;なんでも自由に書いてください。"></textarea>
     </div>
 
+  </div>
+
+  <!-- PAGE: JOURNAL -->
+  <div class="page" id="page-journal">
+    <div class="page-header">
+      <button class="menu-toggle" onclick="toggleSidebar()" title="メニュー"><span></span><span></span><span></span></button>
+      <h1>📔 Journal</h1>
+      <div class="nav-controls">
+        <span id="j-header-date" style="font-size:12px;color:var(--text-muted);font-family:'JetBrains Mono',monospace"></span>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="j-container">
+        <!-- フィルター -->
+        <div class="j-filter-row" id="j-filter-row">
+          <span class="j-filter-tag all" data-filter="all">すべて</span>
+          <span class="j-filter-tag emotion" data-filter="emotion">感情・気持ち</span>
+          <span class="j-filter-tag idea" data-filter="idea">アイデア</span>
+        </div>
+        <!-- 新規入力 -->
+        <div class="j-new-entry">
+          <div class="j-entry-top">
+            <select class="j-cat-select" id="j-new-cat">
+              <option value="emotion">感情・気持ち</option>
+              <option value="idea">アイデア</option>
+            </select>
+          </div>
+          <textarea class="j-textarea" id="j-new-text" placeholder="今の気持ちやアイデアを書き出してみよう…"></textarea>
+          <div class="j-tag-row" id="j-new-tags-row">
+            <input class="j-tag-input" id="j-new-tag-input" placeholder="+ タグを追加 (Enter)" />
+          </div>
+          <div class="j-entry-bottom">
+            <div class="j-mood-row" id="j-mood-row">
+              <div class="j-mood-btn sel" data-mood="😊">😊</div>
+              <div class="j-mood-btn" data-mood="😐">😐</div>
+              <div class="j-mood-btn" data-mood="😔">😔</div>
+              <div class="j-mood-btn" data-mood="💡">💡</div>
+            </div>
+            <button class="j-save-btn" onclick="jSaveEntry()">保存する</button>
+          </div>
+        </div>
+        <!-- アクティブエントリ -->
+        <div class="j-section-label">アクティブ</div>
+        <div class="j-entries-list" id="j-entries-list"></div>
+        <!-- 解決済み -->
+        <div class="j-resolved-toggle" onclick="jToggleResolved()">
+          <span class="j-chevron" id="j-chevron">▶</span>
+          <span class="j-section-label" style="margin-bottom:0">解決済み</span>
+          <span class="j-resolved-count" id="j-resolved-count">0</span>
+        </div>
+        <div class="j-resolved-list" id="j-resolved-list"></div>
+      </div>
+    </div>
   </div>
 
 </div><!-- /main -->
@@ -1245,8 +1422,9 @@ function renderWeekly(){
 function toggleSidebar(){
   const sb=document.getElementById('sidebar');
   const ov=document.getElementById('sidebar-overlay');
-  sb.classList.toggle('closed');
-  ov.classList.toggle('open');
+  const isClosed=sb.classList.toggle('closed');
+  // オーバーレイはサイドバーが開いているときだけ表示
+  ov.classList.toggle('open', !isClosed);
 }
 
 // ============================================================
@@ -1486,6 +1664,240 @@ function delMemo(fsId) {
 }
 
 // ============================================================
+// PAGE 6: JOURNAL
+// ============================================================
+let jEntries     = JSON.parse(localStorage.getItem('md_journal') || '[]');
+let jFilter      = 'all';
+let jSelectedMood= '😊';
+let jResolvedOpen= false;
+let jTagColorIdx = 0;
+const J_TAG_COLORS = ['purple','teal','amber','coral'];
+const jTagColorMap = {};
+
+function jGetTagColor(tag) {
+  if (!jTagColorMap[tag]) {
+    jTagColorMap[tag] = J_TAG_COLORS[jTagColorIdx % J_TAG_COLORS.length];
+    jTagColorIdx++;
+  }
+  return jTagColorMap[tag];
+}
+
+function jSaveLocal() {
+  localStorage.setItem('md_journal', JSON.stringify(jEntries));
+}
+
+function jFormatTime() {
+  const d=new Date();
+  return `今日 ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+
+function jRender() { jRenderActive(); jRenderResolved(); }
+
+function jRenderActive() {
+  const list=document.getElementById('j-entries-list');
+  if(!list) return;
+  const filtered=jEntries.filter(e=>!e.resolved&&(jFilter==='all'||e.type===jFilter));
+  if(!filtered.length) {
+    list.innerHTML='<p style="text-align:center;color:var(--text-muted);padding:24px">エントリがありません</p>';
+    return;
+  }
+  list.innerHTML='';
+  filtered.forEach(e=>{
+    const card=document.createElement('div');
+    card.className=`j-entry-card ${e.type}-type`;
+    card.innerHTML=`
+      <div class="j-entry-header">
+        <span class="j-entry-cat ${e.type==='emotion'?'em':'id'}">
+          ${e.type==='emotion'?'感情・気持ち':'アイデア'}&ensp;${e.mood}
+        </span>
+        <span class="j-entry-time">${e.time}</span>
+      </div>
+      <p class="j-entry-text">${esc(e.text)}</p>
+      <div class="j-entry-tags" id="j-tags-${e.fsId}"></div>
+      <div class="j-card-actions">
+        <button class="j-action-btn resolve" onclick="jResolve('${e.fsId}')">✓ 解決済みにする</button>
+        <button class="j-action-btn del" onclick="jDelete('${e.fsId}')">削除</button>
+      </div>`;
+    list.appendChild(card);
+    jRenderCardTags(e);
+  });
+}
+
+function jRenderCardTags(e) {
+  const row=document.getElementById(`j-tags-${e.fsId}`);
+  if(!row) return;
+  row.innerHTML='';
+  (e.tags||[]).forEach((t,i)=>{
+    const span=document.createElement('span');
+    span.className=`j-mini-tag ${jGetTagColor(t)}`;
+    span.innerHTML=`${t} <span class="j-tag-del" onclick="jRemoveTag('${e.fsId}',${i})">✕</span>`;
+    row.appendChild(span);
+  });
+  const inp=document.createElement('input');
+  inp.className='j-tag-input'; inp.placeholder='+ タグ';
+  inp.addEventListener('keydown',ev=>{
+    if(ev.key==='Enter'&&inp.value.trim()){
+      if(!e.tags)e.tags=[];
+      e.tags.push(inp.value.trim());
+      jSaveLocal();
+      if(USE_FIREBASE && e.fsId && !e.fsId.startsWith('local_'))
+        db.collection('journalEntries').doc(e.fsId).update({tags:e.tags}).catch(console.error);
+      jRender();
+    }
+  });
+  row.appendChild(inp);
+}
+
+function jRenderResolved() {
+  const resolved=jEntries.filter(e=>e.resolved);
+  const countEl=document.getElementById('j-resolved-count');
+  const list=document.getElementById('j-resolved-list');
+  if(!countEl||!list) return;
+  countEl.textContent=resolved.length;
+  list.innerHTML='';
+  resolved.forEach(e=>{
+    const card=document.createElement('div');
+    card.className='j-resolved-card';
+    card.innerHTML=`
+      <div class="j-resolved-inner">
+        <div class="j-resolved-body">
+          <div class="j-resolved-label">✓ 解決済み</div>
+          <p class="j-resolved-text">${esc(e.text)}</p>
+          <div class="j-resolved-tags">${(e.tags||[]).map(t=>`<span class="j-mini-tag ${jGetTagColor(t)}">${t}</span>`).join('')}</div>
+        </div>
+        <button class="j-restore-btn" onclick="jRestore('${e.fsId}')">戻す</button>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+
+function jRemoveTag(fsId,idx) {
+  const e=jEntries.find(e=>e.fsId===fsId);
+  if(!e) return;
+  e.tags.splice(idx,1);
+  jSaveLocal();
+  if(USE_FIREBASE&&!fsId.startsWith('local_'))
+    db.collection('journalEntries').doc(fsId).update({tags:e.tags}).catch(console.error);
+  jRender();
+}
+
+function jResolve(fsId) {
+  const e=jEntries.find(e=>e.fsId===fsId);
+  if(!e) return;
+  e.resolved=true;
+  jSaveLocal();
+  if(USE_FIREBASE&&!fsId.startsWith('local_'))
+    db.collection('journalEntries').doc(fsId).update({resolved:true}).catch(console.error);
+  if(!jResolvedOpen){
+    jResolvedOpen=true;
+    document.getElementById('j-resolved-list').style.display='flex';
+    document.getElementById('j-chevron').classList.add('open');
+  }
+  jRender();
+}
+
+function jRestore(fsId) {
+  const e=jEntries.find(e=>e.fsId===fsId);
+  if(!e) return;
+  e.resolved=false;
+  jSaveLocal();
+  if(USE_FIREBASE&&!fsId.startsWith('local_'))
+    db.collection('journalEntries').doc(fsId).update({resolved:false}).catch(console.error);
+  jRender();
+}
+
+function jDelete(fsId) {
+  if(!confirm('このエントリを削除しますか？')) return;
+  jEntries=jEntries.filter(e=>e.fsId!==fsId);
+  jSaveLocal();
+  if(USE_FIREBASE&&!fsId.startsWith('local_'))
+    db.collection('journalEntries').doc(fsId).delete().catch(console.error);
+  jRender();
+}
+
+async function jSaveEntry() {
+  const text=document.getElementById('j-new-text').value.trim();
+  if(!text) return;
+  const type=document.getElementById('j-new-cat').value;
+  const tagSpans=document.querySelectorAll('#j-new-tags-row .j-mini-tag');
+  const tags=Array.from(tagSpans).map(el=>el.dataset.tag);
+  const data={ type, text, tags, mood:jSelectedMood, time:jFormatTime(), resolved:false };
+
+  if(USE_FIREBASE){
+    setSyncStatus('syncing');
+    try {
+      await db.collection('journalEntries').add({...data, createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+      setSyncStatus('ok');
+    } catch(e){ setSyncStatus('error'); console.error(e); }
+  } else {
+    jEntries.unshift({...data, fsId:'local_'+Date.now()});
+    jSaveLocal();
+    jRender();
+  }
+  document.getElementById('j-new-text').value='';
+  document.getElementById('j-new-tags-row').innerHTML=
+    '<input class="j-tag-input" id="j-new-tag-input" placeholder="+ タグを追加 (Enter)" />';
+  jSetupTagInput();
+}
+
+function jToggleResolved() {
+  jResolvedOpen=!jResolvedOpen;
+  document.getElementById('j-resolved-list').style.display=jResolvedOpen?'flex':'none';
+  document.getElementById('j-chevron').classList.toggle('open',jResolvedOpen);
+}
+
+function jSetupTagInput() {
+  const inp=document.getElementById('j-new-tag-input');
+  if(!inp) return;
+  inp.addEventListener('keydown',ev=>{
+    if(ev.key==='Enter'&&inp.value.trim()){
+      const tag=inp.value.trim();
+      const span=document.createElement('span');
+      const color=J_TAG_COLORS[jTagColorIdx%J_TAG_COLORS.length];
+      span.className=`j-mini-tag ${color}`;
+      span.dataset.tag=tag;
+      span.innerHTML=`${tag} <span class="j-tag-del" onclick="this.parentElement.remove()">✕</span>`;
+      jTagColorIdx++;
+      document.getElementById('j-new-tags-row').insertBefore(span,inp);
+      inp.value='';
+    }
+  });
+}
+
+function jInitFilters() {
+  document.querySelectorAll('.j-filter-tag').forEach(el=>{
+    el.addEventListener('click',()=>{
+      jFilter=el.dataset.filter;
+      document.querySelectorAll('.j-filter-tag').forEach(f=>
+        f.classList.toggle('off',f.dataset.filter!==jFilter)
+      );
+      jRender();
+    });
+  });
+  document.querySelectorAll('.j-mood-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      jSelectedMood=btn.dataset.mood;
+      document.querySelectorAll('.j-mood-btn').forEach(b=>b.classList.remove('sel'));
+      btn.classList.add('sel');
+    });
+  });
+}
+
+function jInitDate() {
+  const d=new Date(),days=['日','月','火','水','木','金','土'];
+  const el=document.getElementById('j-header-date');
+  if(el) el.textContent=`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${days[d.getDay()]}）`;
+}
+
+function jStartListener() {
+  if(!USE_FIREBASE){ jRender(); return; }
+  db.collection('journalEntries').orderBy('createdAt','desc').onSnapshot(snap=>{
+    jEntries=snap.docs.map(d=>({fsId:d.id,...d.data()}));
+    jRender();
+  }, err=>{ console.warn('journal listener error',err); });
+}
+
+// ============================================================
 // BOOT
 // ============================================================
 function boot(){
@@ -1493,11 +1905,18 @@ function boot(){
   document.getElementById('pay-date').value=today;
   document.getElementById('inc-date').value=today;
   initSidebar();
-  // 単日ページの時間セレクトを初期化
+  // iPhoneなど小さい画面ではサイドバーを最初から閉じる
+  if(window.innerWidth < 768) {
+    document.getElementById('sidebar').classList.add('closed');
+  }
   populateTimeSelects('d-todo-start','d-todo-end',null,null);
   renderMonthly();
   setSyncStatus('syncing');
   startListeners();
+  jStartListener();
+  jInitFilters();
+  jInitDate();
+  jSetupTagInput();
 
   document.getElementById('w-todo-input').addEventListener('keydown',e=>{ if(e.key==='Enter')addWeeklyTodo(); });
   document.getElementById('d-todo-input').addEventListener('keydown',e=>{ if(e.key==='Enter')addDailyTodo(); });
